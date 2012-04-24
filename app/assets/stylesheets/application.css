@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+
+h1 {
+	color: olivedrab;
+}
+
+
+body {
+	background-color: lemonchiffon;
+}
+
+
+a, a:hover, a:active, a:visited {
+	color: #0069D6;
+}
+
+
+#navbar a {
+	padding: 0px 10px 1px;
+	margin: 5px;
+	color: olivedrab;
+	text-decoration: none;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+#navbar a.active {
+	background-color: olivedrab;
+	color: lemonchiffon;
+		
+	
+}
+#navbar li:hover a {
+	background-color: #F0E68C;
+	color: olivedrab;
+		
+}
+
+
+#navbar {
+	border-top: 1px solid olivedrab;
+	border-bottom: 1px solid olivedrab;
+}
+
+#navbar ul li {
+	float: left;
+	list-style-type: none;
+	
+}
+
+#navbar ul {
+	height: 20px;
+	margin: 0px;
+	padding: 0px;
+}

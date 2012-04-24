@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b class="label">Rider:</b>
+  <%= @score.rider_id %>
+</p>
+
+<p>
+  <b class="label">Circuit:</b>
+  <%= @score.circuit_id %>
+</p>
+
+<p>
+  <b class="label">Position:</b>
+  <%= @score.position %>
+</p>
+
+<p>
+  <b class="label">Score:</b>
+  <%= @score.score %>
+</p>
+
+
+<%= link_to 'Edit', edit_score_path(@score) %> |
+<%= link_to 'Back', circuits_path %>

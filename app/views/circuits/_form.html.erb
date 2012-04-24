@@ -1,0 +1,41 @@
+<%= form_for(@circuit) do |f| %>
+  <% if @circuit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@circuit.errors.count, "error") %> prohibited this circuit from being saved:</h2>
+
+      <ul>
+      <% @circuit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <label for= "circuit_length">Length (km)</label><br />
+    <%= f.text_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br />
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br />
+    <%= f.text_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :long %><br />
+    <%= f.text_field :long %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date, :start_year => Date.today.year, :end_year => Date.today.year + 1 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

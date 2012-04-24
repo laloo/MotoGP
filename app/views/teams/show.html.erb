@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b class="label">Name:</b>
+  <%= @team.name %>
+</p>
+
+<p>
+  <b class="label">Colors:</b>
+  <%= @team.colors %>
+</p>
+
+<p>
+  <b class="label">Nationality:</b>
+  <%= @team.nationality %>
+</p>
+
+<p>
+  <b class="label">Riders:</b>
+  <ul>
+  <% @team.riders.each do |rider| -%>
+    <li><%= link_to rider.name + " " + rider.surname, rider_path(rider) %></li>  
+  <% end -%>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>

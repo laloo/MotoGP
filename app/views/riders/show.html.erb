@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b class="label">Name:</b>
+  <%= @rider.name %>
+</p>
+
+<p>
+  <b class="label">Surname:</b>
+  <%= @rider.surname %>
+</p>
+
+<p>
+  <b class="label">Date of birth:</b>
+  <%= @rider.date_of_birth %>
+</p>
+
+<p>
+  <b class="label">Nationality:</b>
+  <%= @rider.nationality %>
+</p>
+
+<p>
+  <b class="label">Team:</b>
+  <%= link_to @rider.team.name, team_path(@rider.team) unless @rider.team.nil? %>
+</p>
+
+<p>
+  <b class="label">Score:</b>
+  <%= @rider.score %>
+</p>
+
+<p>
+  <b class="label">Circuits:</b>
+  <ul>
+  <% @rider.circuits.each do |circuit| -%>
+  <li><%= circuit.name %></li>
+  <% end -%>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_rider_path(@rider) %> |
+<%= link_to 'Back', riders_path %>

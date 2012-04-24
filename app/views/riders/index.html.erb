@@ -1,0 +1,35 @@
+<h1>Listing riders</h1>
+
+<table class="rider">
+  <tr>
+    <th class="small_margin">Name</th>
+    <th>Surname</th>
+    <th>Date of birth</th>
+    <th>Age</th>
+    <th>Nationality</th>
+    <th>Team</th>
+    <th>Score</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @riders.each do |rider| %>
+  <tr>
+    <td><%= rider.name %></td>
+    <td><%= rider.surname %></td>
+    <td><%= rider.date_of_birth %></td>
+    <td><%= Date.today.year - rider.date_of_birth.year %> </td>
+    <td><%= rider.nationality %></td>
+    <td><%= link_to rider.team.name, team_path(rider.team) unless rider.team.nil? %></td>
+    <td><%= rider.score unless rider.score.nil? %></td>
+    <td><%= link_to 'Show', rider %></td>
+    <td><%= link_to 'Edit', edit_rider_path(rider) %></td>
+    <td><%= link_to 'Destroy', rider, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rider', new_rider_path %>

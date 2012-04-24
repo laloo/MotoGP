@@ -1,0 +1,31 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#inline li {
+	float: left;
+	list-style-type: none;
+	margin: 5px;
+	padding: 0px 10;
+}
+
+#inline li:hover a {
+	background-color: olivedrab;
+	color: lemonchiffon;
+}
+
+#inline a {
+	margin: 5px;
+	padding: 0px 6px;
+	border-radius: 10px;
+	color: olivedrab;
+	text-decoration: none;
+	border: 1px solid olivedrab;
+}
+
+#inline ul {
+	height: 20px;
+	margin: 0px;
+	padding: 0px;
+}

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  length: 1.5
+  nationality: MyString
+  lat: 1.5
+  long: 1.5
+
+two:
+  name: MyString
+  length: 1.5
+  nationality: MyString
+  lat: 1.5
+  long: 1.5

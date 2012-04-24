@@ -1,0 +1,33 @@
+<h1>Listing circuits</h1>
+
+<table class="circuit">
+  <tr>
+    <th>Name</th>
+    <th>Length (km)</th>
+    <th>Nationality</th>
+    <th>Lat</th>
+    <th>Long</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @circuits.each do |circuit| %>
+  <tr>
+    <td><%= circuit.name %></td>
+    <td><%= circuit.length %></td>
+    <td><%= circuit.nationality %></td>
+    <td><%= circuit.lat %></td>
+    <td><%= circuit.long %></td>
+    <td><%= circuit.date %></td>
+    <td><%= link_to 'Show', circuit %></td>
+    <td><%= link_to 'Edit', edit_circuit_path(circuit) %></td>
+    <td><%= link_to 'Destroy', circuit, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Circuit', new_circuit_path %>

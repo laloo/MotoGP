@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lalo</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div>
+<%= link_to image_tag("Banner.gif") %>
+</div>
+<% def is_current_page?(page)
+controller_name, action_name = page.split('#')
+return 'active' if controller.controller_name == controller_name 
+return ''
+end
+%>
+<% unless current_page?(root_path)%>
+<div id="navbar">
+<ul>
+<li> <%= link_to "Home", root_path, :class=> is_current_page?('pages#index') %> </li>
+<li> <%= link_to "Riders", riders_path, :class=> is_current_page?('riders#index') %> </li>
+<li> <%= link_to "Teams", teams_path, :class=> is_current_page?('teams#index') %> </li>
+<li> <%= link_to "Circuits", circuits_path, :class=> is_current_page?('circuits#index') %> </li>
+<li> <%= link_to "Scores", scores_path, :class=> is_current_page?('scores#index') %> </li>
+</ul>
+</div>
+<% end %>
+<%= yield %>
+</body>
+</html>

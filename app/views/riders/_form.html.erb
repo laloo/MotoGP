@@ -1,0 +1,42 @@
+<%= form_for(@rider) do |f| %>
+  <% if @rider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rider.errors.count, "error") %> prohibited this rider from being saved:</h2>
+
+      <ul>
+      <% @rider.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_birth %><br />
+    <%= f.date_select :date_of_birth, {:start_year => 30.years.ago.year, :end_year => Date.today.year} %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br />
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :team_id %><br />
+    <%= f.select :team_id, options_from_collection_for_select(Team.all, "id", "name"), :include_blank => true %> 
+  </div>
+  <div class="field">
+    <%= f.label :score %><br />
+    <%= f.text_field :score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

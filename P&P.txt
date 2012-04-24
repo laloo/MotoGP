@@ -1,0 +1,6 @@
+a)	collegare posizione con punteggio
+b)  mettere mappa al posto di lat/lon
+c)  classifiche in tabella con punteggio
+d)  classifica generale 
+
+

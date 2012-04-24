@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rider_id: 
+  circuit_id: 
+  position: 
+  score: 
+
+two:
+  rider_id: 
+  circuit_id: 
+  position: 
+  score: 

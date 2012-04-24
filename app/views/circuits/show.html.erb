@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b class="label">Name:</b>
+  <%= @circuit.name %>
+</p>
+
+<p>
+  <b class="label">Length (km):</b>
+  <%= @circuit.length %>
+</p>
+
+<p>
+  <b class="label">Nationality:</b>
+  <%= @circuit.nationality %>
+</p>
+
+<p>
+  <b class="label">Lat:</b>
+  <%= @circuit.lat %>
+</p>
+
+<p>
+  <b class="label">Long:</b>
+  <%= @circuit.long %>
+</p>
+
+<p>
+  <b class="label">Date:</b>
+  <%= @circuit.date %>
+</p>
+
+<p>
+  <b class="label">Riders:</b>
+  <table>
+    <% @scores.each do |score| -%>
+   <tr>
+   <td> <%= score.position %> </td>
+   <% rider = score.rider %>
+   <td> <%= link_to rider.name + " " + rider.surname, rider_path(rider) %> </td> 
+  </tr>
+   <% end -%>
+  </table>
+</p>
+
+<%= link_to 'Edit Score', :controller => "scores", :action => "new", :circuit_id => @circuit.id %> |
+<%= link_to 'Edit', edit_circuit_path(@circuit) %> |
+<%= link_to 'Back', circuits_path %>
